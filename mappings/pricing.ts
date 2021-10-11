@@ -5,22 +5,26 @@ import { Pair, Token, Bundle } from "../generated/schema";
 import { ZERO_BD, factoryContract, ADDRESS_ZERO, ONE_BD } from "./utils";
 
 let WBNB_ADDRESS = "0x7539595ebda66096e8913a24cc3c8c0ba1ec79a0"; // wrei
-let BUSD_WBNB_PAIR = "0x89Cf01fa711f29FAB9C2874Cebc2065E3EdCEF6D"; // created block 326
+let BUSD_WBNB_PAIR = "0x89cf01fa711f29fab9c2874cebc2065e3edcef6d"; // created block 326
 
 export function getBnbPriceInUSD(): BigDecimal {
   // fetch eth prices for each stablecoin
   let busdPair = Pair.load(BUSD_WBNB_PAIR); // busd is token1
   if (busdPair !== null) {
+    if(busdPair.token0Price && busdPair.token1Price){
+      log.info('!!!!!! price {},{}',[busdPair.token0Price.toString(), busdPair.token1Price.toString()])
+    }
     return busdPair.token1Price;
   } else {
+    log.info('+++++++ not found BusdPair return {}',[ZERO_BD.toString()])
     return ZERO_BD;
   }
 }
 
 // token where amounts should contribute to tracked volume and liquidity
 let WHITELIST: string[] = [
-  "0x89Cf01fa711f29FAB9C2874Cebc2065E3EdCEF6D", // WBNB //WREI
-  "0x89Cf01fa711f29FAB9C2874Cebc2065E3EdCEF6D", // BUSD //KBUSD
+  "0x7539595ebda66096e8913a24cc3c8c0ba1ec79a0", // WBNB //WREI
+  "0xdd2bb4e845bd97580020d8f9f58ec95bf549c3d9", // BUSD //KBUSD
 ];
 
 // minimum liquidity for price to get tracked
