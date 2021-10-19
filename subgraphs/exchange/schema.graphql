@@ -178,6 +178,7 @@ type Swap @entity {
 
   # derived info
   amountUSD: BigDecimal!
+  amountBNB: BigDecimal!
 }
 
 type PancakeDayData @entity {

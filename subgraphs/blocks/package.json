@@ -1,0 +1,16 @@
+{
+    "name": "blocks",
+    "description": "Foodcourt subgraphs",
+    "version": "1.0.0",
+    "repository": "https://github.com/nolifelover/rei-foodcourt-subgraph.git",
+    "author": "Nolifelover<nolifelover@gmail.com>",
+    "license": "GPL-3.0-or-later",
+    "scripts": {
+      "codegen": "graph codegen subgraph.yaml",
+      "build": "graph build subgraph.yaml",
+      "create-local": "graph create rei/blocks --node http://127.0.0.1:8020",
+      "deploy-local": "graph deploy rei/blocks --debug --ipfs http://localhost:5001 --node http://127.0.0.1:8020/",
+      "watch-local": "graph deploy rei/blocks --watch --debug --node http://127.0.0.1:8020/ --ipfs http://localhost:5001"
+    }
+  }
+  
