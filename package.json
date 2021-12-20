@@ -1,8 +1,8 @@
 {
-  "name": "foodcourt-subgraph",
-  "description": "Foodcourt Subgraph on REI chain",
+  "name": "aurora-trisolaris-subgraph",
+  "description": "Trisolaris Subgraph on Aurora chain",
   "version": "1.0.0",
-  "repository": "https://github.com/nolifelover/rei-foodcourt-subgraph.git",
+  "repository": "https://github.com/nolifelover/aurora-trisolaris-subgraph.git",
   "author": "Nolifelover<nolifelover@gmail.com>",
   "license": "GPL-3.0-or-later",
   "scripts": {
